@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_guide_course/screens/homepage.dart';
-import 'package:quiz_app_guide_course/screens/question_screen.dart';
+import '../screens/question_screen.dart';
 
 import '../gradient_container.dart';
 
@@ -12,21 +12,23 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  var activeScreen ='start-screen';
+
   /*Widget? activeScreen ;
 
   @override
   void initState() {
-    activeScreen = GradientContainer(Colors.deepPurple,Colors.red ,switchScreen())
+    activeScreen = GradientContainer(switchScreen);
 
     super.initState();
   }
-
+*/
   void switchScreen(){
     setState(() {
-      activeScreen = const QuestionScreen();
+      activeScreen = 'question-screen';
     });
   }
-*/
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,10 +38,10 @@ class _QuizState extends State<Quiz> {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home:  const Scaffold(
+      home:   Scaffold(
         backgroundColor: Color.fromARGB(255, 61, 20, 155),
 
-        body: Center(child: GradientContainer(Colors.deepPurple,Colors.red , )),
+        body: activeScreen == 'start-screen' ? GradientContainer() : QuestionScreen(),
 
 
 
