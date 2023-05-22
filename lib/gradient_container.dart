@@ -6,7 +6,7 @@ const startAlignment = Alignment.centerLeft;
 const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer(
+  const GradientContainer(void Function() switchScreen, 
 
       // this.startQuiz,
       {

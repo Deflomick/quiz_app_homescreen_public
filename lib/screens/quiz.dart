@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app_guide_course/screens/homepage.dart';
 import '../screens/question_screen.dart';
 
 import '../gradient_container.dart';
@@ -31,6 +30,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidget = activeScreen == 'start-screen' ? GradientContainer(switchScreen) : const QuestionScreen();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -41,7 +41,7 @@ class _QuizState extends State<Quiz> {
       home:   Scaffold(
         backgroundColor: Color.fromARGB(255, 61, 20, 155),
 
-        body: activeScreen == 'start-screen' ? GradientContainer() : QuestionScreen(),
+        body: screenWidget,
 
 
 
