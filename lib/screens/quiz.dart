@@ -30,7 +30,12 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidget = activeScreen == 'start-screen' ? GradientContainer(switchScreen) : const QuestionScreen();
+    Widget screenWidget = GradientContainer(switchScreen);
+
+    if(activeScreen == 'question-screen'){
+      screenWidget = const QuestionScreen();
+    }
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
