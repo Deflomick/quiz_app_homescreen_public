@@ -8,16 +8,16 @@ const endAlignment = Alignment.bottomRight;
 class GradientContainer extends StatelessWidget {
   const GradientContainer(
     this.color1,
-    this.color2,
+    this.color2, this.startQuiz,
   // this.startQuiz,
   {
     super.key,
   });
 
-  //final void Function () startQuiz;
+  final void Function () startQuiz;
 
   //costruttore alternativo
-  const GradientContainer.purpleTwo({super.key})
+  const GradientContainer.purpleTwo({super.key, required this.startQuiz})
       : color1 = Colors.white,
         color2 = Colors.black;
 
@@ -65,8 +65,8 @@ class GradientContainer extends StatelessWidget {
         //aggiunta di icon in outlinedbutton quindi child diventa label
         OutlinedButton.icon(
 
-          onPressed: (){
-
+          onPressed: () {
+            startQuiz();
           },
           style: OutlinedButton.styleFrom(
             foregroundColor: Colors.white,
