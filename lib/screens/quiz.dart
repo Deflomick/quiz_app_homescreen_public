@@ -15,7 +15,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   void initState() {
-    activeScreen = GradientContainer(Colors.deepPurple,Colors.red ,switchScreen );
+    activeScreen = GradientContainer(Colors.deepPurple[300]!,Colors.red ,switchScreen );
 
     super.initState();
   }
@@ -36,7 +36,7 @@ class _QuizState extends State<Quiz> {
       ),
       debugShowCheckedModeBanner: false,
       home:   Scaffold(
-        backgroundColor: Color.fromARGB(255, 61, 20, 155),
+        backgroundColor: Colors.purple,
 
         body: activeScreen,
 
